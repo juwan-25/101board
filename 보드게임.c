@@ -39,7 +39,10 @@ void main(void)
 	//던진 주사위 값을 현재 위치에 적용
 	position += dice;
 	printf("현재 위치 : %d\n\n", position);
-	
+
+	//scanf와 비슷한 원리, 아무값이나 입력 받도록 함
+	getchar();
+
 
 	/* 두 번째 던짐 */
 	/*
@@ -53,5 +56,6 @@ void main(void)
 	position += dice;
 	printf("현재 위치 : %d\n\n", position);
 	
+	getchar();
 }
 
