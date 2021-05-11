@@ -28,34 +28,28 @@ void main(void)
 
 	printf("현재 위치 : %d\n\n", position);
 
-	/* 첫 번째 던짐 */ 
 	/*
-	주사위는 1~6까지 나오게 설정
-	%6 -> 0,1,2,3,4,5 나옴, 1을 더하면 1~6
+	무한 반복
+	if와 같은 구조이지만 실행 후 조건이 참이면 다시 실행함
 	*/
-	dice = rand() % 6 + 1;
-	printf("주사위를 던져서 %d가 나왔습니다.\n\n", dice);
+	while (1)
+	{
+		//scanf와 비슷한 원리, 아무값이나 입력 받도록 함
+		getchar();
 
-	//던진 주사위 값을 현재 위치에 적용
-	position += dice;
-	printf("현재 위치 : %d\n\n", position);
+		/* 두 번째 던짐 */
+		/*
+		주사위는 1~6까지 나오게 설정
+		%6 -> 0,1,2,3,4,5 나옴, 1을 더하면 1~6
+		*/
+		dice = rand() % 6 + 1;
+		printf("주사위를 던져서 %d가 나왔습니다.\n\n", dice);
 
-	//scanf와 비슷한 원리, 아무값이나 입력 받도록 함
-	getchar();
+		//던진 주사위 값을 현재 위치에 적용
+		position += dice;
+		printf("현재 위치 : %d\n\n", position);
 
-
-	/* 두 번째 던짐 */
-	/*
-	주사위는 1~6까지 나오게 설정
-	%6 -> 0,1,2,3,4,5 나옴, 1을 더하면 1~6
-	*/
-	dice = rand() % 6 + 1;
-	printf("주사위를 던져서 %d가 나왔습니다.\n\n", dice);
-
-	//던진 주사위 값을 현재 위치에 적용
-	position += dice;
-	printf("현재 위치 : %d\n\n", position);
+	}
 	
-	getchar();
 }
 
