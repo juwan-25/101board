@@ -34,7 +34,10 @@ void main(void)
 	*/
 	while (1)
 	{
-		//scanf와 비슷한 원리, 아무값이나 입력 받도록 함
+		/*
+		엔터키를 눌러서 진행시킴
+		scanf와 비슷한 원리, 아무 값이나 입력 받도록 함
+		*/
 		getchar();
 
 		/* 두 번째 던짐 */
@@ -49,6 +52,10 @@ void main(void)
 		position += dice;
 		printf("현재 위치 : %d\n\n", position);
 
+		if (position > 60)
+		{
+			printf("축하합니다. 목적지에 도착하셨습니다.\n");
+		}
 	}
 	
 }
