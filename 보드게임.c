@@ -23,10 +23,12 @@ void main(void)
 	int position = 0;
 	// 주사위
 	int dice;
+	//돈은 2억부터 시작
+	long long money = 200000000;
 
 	srand(time(0));
 
-	printf("현재 위치 : %d\n\n", position);
+	printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
 
 	/*
 	무한 반복
@@ -50,7 +52,7 @@ void main(void)
 
 		//던진 주사위 값을 현재 위치에 적용
 		position += dice;
-		printf("현재 위치 : %d\n\n", position);
+		printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
 
 		if (position > 60)
 		{
