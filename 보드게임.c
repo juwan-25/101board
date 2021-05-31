@@ -75,6 +75,7 @@ void main(void)
 			break;
 		}
 
+		//switch문으로 수정 불가함_범위 지정 불가
 		if (position > 60)
 		{
 			printf("축하합니다. 목적지에 도착하셨습니다.\n");
