@@ -56,6 +56,15 @@ void main(void)
 
 		switch(position)
 		{
+		case 10:
+			printf("위치10에 있을 때, 주사위를 다시 던집니다");
+			getchar();
+			dice = rand() % 6 + 1;
+			money += 100000 * dice;
+			printf("주사위가 %d이(가) 나와서 %d원을 획득하였습니다.\n", dice, 100000 * dice);
+			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+			break;
+
 		case 20:
 			printf("기부천사 - 위치 20에 있을 때, 재산의 20%%를 사회에 기부합니다.\n");
 			money = (long long)(money * 0.8);
