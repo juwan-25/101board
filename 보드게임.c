@@ -3,7 +3,7 @@
 *	보드게임
 *	총 40칸
 *	플레이의 속성
-*		1. 돈 : 2,000,000,000 시작
+*		1. 돈 :20,000,000 시작
 *		2. 현재위치 : 0부터 시작
 		3. 황금열쇠
 			원하는 곳 갈수 있음
@@ -24,11 +24,11 @@ void main(void)
 	// 주사위
 	int dice;
 	//돈은 2억부터 시작
-	long long money = 200000000;
+	int money = 20000000;
 
 	srand(time(0));
 
-	printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+	printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 
 	/*
 	무한 반복
@@ -59,9 +59,9 @@ void main(void)
 		case 10:
 			printf("위치10에 있을 때, 주사위를 다시 던집니다");
 			getchar();
-			dice = rand() % 6 + 1;
-			money += 100000 * dice;
-			printf("주사위가 %d이(가) 나와서 %d원을 획득하였습니다.\n", dice, 100000 * dice);
+			int dice_money = rand() % 6 + 1;
+			money += 100000 * dice_money;
+			printf("주사위가 %d이(가) 나와서 %d원을 획득하였습니다.\n", dice_money, 100000 * dice_money);
 			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
 			break;
 
