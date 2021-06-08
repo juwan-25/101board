@@ -78,6 +78,17 @@ void main(void)
 			position += dice;
 			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
+	
+		case 49:
+			printf("위치 49에 있을 때, 주사위 던진 만큼 더 나아갑니다. \n");
+			for (int i = 1 ; i <= 3; i++)
+			{
+				getchar();
+				printf("%d 입니다, ", i);
+			}
+			printf("무인도에 탈출하였습니다");
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
+			break;
 
 		case 59:
 			printf("위치 59에 있을 때, 처음 지점으로 돌아갑니다.\n");
