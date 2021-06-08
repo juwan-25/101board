@@ -23,6 +23,8 @@ void main(void)
 	int position = 0;
 	// 주사위
 	int dice;
+	// 공간의 끝 점
+	const int finish = 60;
 	//돈은 2천만부터 시작
 	int money = 2000000;
 
@@ -81,17 +83,17 @@ void main(void)
 			printf("위치 59에 있을 때, 처음 지점으로 돌아갑니다.\n");
 			position = 0;
 			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
-			break;
-
-		case 60:
+			break;		
+		}
+		if (position==finish)
+		{
 			printf("끝 점에 있을 때, 금액이 2배가 됩니다. \n");
 			money *= 2;
 			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
-			break;
 		}
 
 		//switch문으로 수정 불가함_범위 지정 불가
-		if (position > 60)
+		if (position > finish)
 		{
 			printf("축하합니다. 목적지에 도착하셨습니다.\n");
 			break;
