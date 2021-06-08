@@ -56,7 +56,7 @@ void main(void)
 		position += dice;
 		printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 
-		switch(position)
+		switch (position)
 		{
 		case 10:
 			printf("위치10에 있을 때, 주사위를 다시 던집니다");
@@ -78,24 +78,38 @@ void main(void)
 			position += dice;
 			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
-	
-		case 49:
-			printf("위치 49에 있을 때, 주사위 던진 만큼 더 나아갑니다. \n");
-			for (int i = 1 ; i <= 3; i++)
-			{
-				getchar();
-				printf("%d 입니다, ", i);
-			}
-			printf("무인도에 탈출하였습니다");
-			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
-			break;
-
 		case 59:
 			printf("위치 59에 있을 때, 처음 지점으로 돌아갑니다.\n");
 			position = 0;
 			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
-			break;		
+			break;
+
+			// 3턴동안 움직이지 못함
+		case 49:
+			printf("*위치 49*에 있을때, 3턴동안 움직일 수 없습니다.\n");
+			for (int i = 1; i <= 3; i++)
+			{
+				getchar();
+				printf("%d 턴입니다.\n", i);
+				dice = rand() % 6 + 1;
+				printf("주사위가 %d가 나왔습니다.\n", dice);
+
+				// 주사위를 던져서 3이 나오면 무인도를 탈출
+				if (dice == 3)
+				{
+					printf("축하합니다 %d이(가) 나왔습니다.", dice);
+					break;
+				}
+			}
+			printf("무인도를 탈출하였습니다. \n");
+			printf("현재위치 : %d, 현재금액 : %d \n\n", position, money);
+			break;
 		}
+		printf("무인도에 탈출하였습니다");
+		printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
+		break;
+	}
+		
 		if (position==finish)
 		{
 			printf("끝 점에 있을 때, 금액이 2배가 됩니다. \n");
@@ -107,9 +121,8 @@ void main(void)
 		if (position > finish)
 		{
 			printf("축하합니다. 목적지에 도착하셨습니다.\n");
-			break;
 		}
 	}
 	
-}
+
 
