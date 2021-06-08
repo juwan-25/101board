@@ -23,8 +23,8 @@ void main(void)
 	int position = 0;
 	// 주사위
 	int dice;
-	//돈은 2억부터 시작
-	int money = 20000000;
+	//돈은 2천만부터 시작
+	int money = 2000000;
 
 	srand(time(0));
 
@@ -52,7 +52,7 @@ void main(void)
 
 		//던진 주사위 값을 현재 위치에 적용
 		position += dice;
-		printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+		printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 
 		switch(position)
 		{
@@ -62,25 +62,31 @@ void main(void)
 			int dice_money = rand() % 6 + 1;
 			money += 100000 * dice_money;
 			printf("주사위가 %d이(가) 나와서 %d원을 획득하였습니다.\n", dice_money, 100000 * dice_money);
-			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
 
 		case 20:
 			printf("기부천사 - 위치 20에 있을 때, 재산의 20%%를 사회에 기부합니다.\n");
-			money = (long long)(money * 0.8);
-			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+			money = (int)(money * 0.8);
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
 
 		case 30:
 			printf("위치 30에 있을 때, 주사위 던진만큼 더 나아갑니다.\n");
 			position += dice;
-			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
 
 		case 59:
 			printf("위치 59에 있을 때, 처음 지점으로 돌아갑니다.\n");
 			position = 0;
-			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
+			break;
+
+		case 60:
+			printf("끝 점에 있을 때, 금액이 2배가 됩니다. \n");
+			money *= 2;
+			printf("현재위치 : %d, 현재금액 : %d\n\n", position, money);
 			break;
 		}
 
