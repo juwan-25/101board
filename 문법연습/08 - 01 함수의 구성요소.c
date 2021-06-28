@@ -2,12 +2,14 @@
 
 /*두 개의 숫자를 더해서 반환하는 함수*/
 //매개변수 void는 0개라는 뜻(공간이 없음)
-void sum(int num1, int num2)
+double sum(int num1, int num2)
 {
-	printf("%d\n", num1+num2);
+	return (double)(num1+num2)+0.14;
 }
 
-int main(void)
+void main(void)
 {
-	sum(1, 2);
+	double a = sum(1, 2);
+	printf("%lf", a);
+	
 }
