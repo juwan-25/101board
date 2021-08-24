@@ -9,8 +9,6 @@ void main(void)
 
 int abs(int num)
 {
-	if (num < 0) num = -num;
-	else num = num;
-	
-	return num;
+	if (num < 0) return -num;
+	else return num;
 }
