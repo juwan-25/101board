@@ -1,37 +1,54 @@
 #include <stdio.h>
 
-// 입력받은 점수(score)에 대한 등급을 출력
-void cal_grade(int score)
+void main(void)
 {
-	if (score >= 90 && score <= 100)
+	int ca_score;
+	printf("컴퓨터구조 점수를 입력하시오 : ");
+	scanf_s("%d", &ca_score);
+
+
+	if (ca_score >= 90 && ca_score <= 100)
 		printf("A");
-	else if (score >= 80)
+	else if (ca_score >= 80)
 		printf("B");
-	else if (score >= 70)
+	else if (ca_score >= 70)
 		printf("C");
-	else if (score >= 60)
+	else if (ca_score >= 60)
 		printf("D");
 	else
 		printf("E");
 	printf("\n");
-}
 
-void main(void)
-{
-	int c_score, java_score, ca_score;
-	printf("C언어 점수를 입력하시오 : ");
-	scanf("%d", &c_score);
-
-	cal_grade(c_score);
-
-
+	int java_score;
 	printf("자바 점수를 입력하시오 : ");
-	scanf("%d", &java_score);
+	scanf_s("%d", &java_score);
 
-	cal_grade(java_score);
+	if (java_score >= 90 && java_score <= 100)
+		printf("A");
+	else if (java_score >= 80)
+		printf("B");
+	else if (java_score >= 70)
+		printf("C");
+	else if (java_score >= 60)
+		printf("D");
+	else
+		printf("E");
+	printf("\n");
 
-	printf("컴퓨터구조 점수를 입력하시오 : ");
-	scanf("%d", &ca_score);
+	int c_score;
+	printf("C언어 점수를 입력하시오 : ");
+	scanf_s("%d", &c_score);
 
-	cal_grade(ca_score);
+	if (c_score >= 90 && c_score <= 100)
+		printf("A");
+	else if (c_score >= 80)
+		printf("B");
+	else if (c_score >= 70)
+		printf("C");
+	else if (c_score >= 60)
+		printf("D");
+	else
+		printf("E");
+	printf("\n");
+
 }
