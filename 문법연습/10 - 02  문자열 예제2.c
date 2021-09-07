@@ -4,7 +4,7 @@ void main(void)
 {
 	char str[20] = "Hello World";
 
-	//단순하게 인덱스 값을 직접 계산함
-	for (int i = 0; i < 12; i++)
-		printf("%c",str[i]);
+	//문자열의 갯수를 세지 않고 널문자 여부만을 확인
+	for (int i = 0; str[i] != '\0'; i++)
+		printf("%c", str[i]);
 }
