@@ -3,7 +3,9 @@
 void main(void)
 {
 	char str[20] = "Hello World";
-	for (int i = 0; i != 'W'; i++)
-		printf("%s \n", str);
+
+	//'W'다음에 NULL 문자를 주어 문자열을 끊음
+	str[7] = '\0';
+	printf("%s \n", str);
 
 }
